@@ -90,9 +90,17 @@ References to start an Angular project.
             "off"
          ]
          ```
+      1. Other rules that may help when getting started:
+         ```json
+         "@typescript-eslint/no-extraneous-class": [ "off" ],
+         "@typescript-eslint/no-inferrable-types": [ "off" ],
+         "@typescript-eslint/explicit-function-return-type": [ "warn" ],
+         "@typescript-eslint/no-explicit-any": [ "off" ]
+         ```
+         Sample [.eslintrc.json](.eslintrc.json) file
       1. List of all Typescript ESLint rules: https://typescript-eslint.io/rules/
       <br>
-      For example, to force functions to specify return types: https://typescript-eslint.io/rules/explicit-function-return-type
+         For example, to force functions to specify return types: https://typescript-eslint.io/rules/explicit-function-return-type
       
    1. Prettier/ESLint integration: for Prettier and ESLint to play nice together (https://typescript-eslint.io/docs/linting/configs/#prettier):
       1. Install eslint-config-prettier: ```npm install eslint-config-prettier --save-dev```
