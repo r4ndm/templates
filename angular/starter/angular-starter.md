@@ -113,6 +113,7 @@ References to start an Angular project.
            "prettier"
          ]
          ```
+      1. Do you need eslint-plugin-prettier and prettier-eslint? Not really. See https://prettier.io/docs/en/integrating-with-linters.html#notes 
 1. Add a component: <br>
    ```ng generate component my-component```
    <br>
