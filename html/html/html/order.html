@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JCC | Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/site.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/order.css" />
+    <script src="/scripts/order.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="computers.html">Computers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside><img src="/images/jcc-logo.jpg" alt="" /></aside>
+      <article>
+        <h1>Order</h1>
+        <div class="computer">
+          <img src="" alt="" />
+          <div class="columns">
+            <div class="title"></div>
+            <div class="price"></div>
+          </div>
+          <p class="desc"></p>
+        </div>
+
+        <form action="http://localhost:7071/api/post" method="POST">
+          <input type="hidden" id="computer-order" name="computer-order" />
+          <input type="hidden" id="location" name="location" />
+
+          <div class="input-group">
+            <div><label for="first-name">First name</label></div>
+            <div><input type="text" name="first-name" id="first-name" /></div>
+          </div>
+          <div class="input-group">
+            <div><label for="last-name">Last name</label></div>
+            <div><input type="text" name="first-name" id="last-name" /></div>
+          </div>
+          <div class="input-group">
+            <div><label for="address">Address</label></div>
+            <div><input type="text" name="address" id="address" /></div>
+          </div>
+          <div class="input-group">
+            <div><label for="state">State</label></div>
+            <div>
+              <select name="state" id="state">
+                <option value="" selected>[Select one]</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <div><label for="postal-code">Postal code</label></div>
+            <div><input type="text" name="postal-code" id="postal-code" /></div>
+          </div>
+          <div class="input-group">
+            <div><label for="comments">Comments</label></div>
+            <div><textarea name="comments" id="comments" cols="30" rows="10"></textarea></div>
+          </div>
+
+          <input type="reset" value="Reset" />
+          <input type="submit" value="Order" />
+        </form>
+      </article>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="computers.html">Computers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

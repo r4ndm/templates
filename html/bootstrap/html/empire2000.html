@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="/images/jcc-logo-small.jpg"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="JCC Logo"
+            />
+            JCC
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="nav-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Computers
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="nav-dropdown">
+                  <li><a class="dropdown-item" href="amdoids.html">AMDroids</a></li>
+                  <li><a class="dropdown-item" href="inteloids.html">Inteloids</a></li>
+                  <li><a class="dropdown-item" href="armoids.html">ARMoids</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="allcomputers.html">All computers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="order.html">Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="membership.html"> Membership </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+      <div class="container">
+        <nav class="my-3 ms-3">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/html/index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Computers</a></li>
+            <li class="breadcrumb-item"><a href="/html/armoids.html">ARMoids</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Empire 2000</li>
+          </ol>
+        </nav>
+
+        <h1 class="fw-bolder">
+          Empire 2000
+          <small class="fw-normal fst-italic">Best seller</small>
+        </h1>
+
+        <div class="row">
+          <div class="col-lg-8 col-sm-6">
+            <img class="rounded img-fluid" src="/images/products/build1.jpg" alt="build1" />
+          </div>
+
+          <div class="col-lg-4">
+            <h3 class="my-3">About this computer</h3>
+            <p>
+              This computer is so powerful that it is banned in most parts of the universe. Certified for installation
+              in the Death Star, this computer is used to generate the superlaser! Featuring ARMoid chips, these computers
+              are fast, 
+            </p>
+            <h3>Components</h3>
+            <ul>
+              <li>ARMoid 6080x</li>
+              <li>Hyperdrive</li>
+              <li>Quantum bits</li>
+              <li>Superlaser</li>
+            </ul>
+            <div class="row">
+              <div class="col-md-4">
+                <strong>Wu$14982.95</strong>
+              </div>
+              <div class="col-md-8">
+                <a
+                  type="button"
+                  class="btn btn-success float-right"
+                  href="shoppingbasket.html"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#shoppingCart"
+                  aria-controls="shoppingCart"
+                  >Add to basket</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 mb-3 mt-2 bg-light rounded border border-primary">
+          <h4>Applications</h4>
+          <p class="mb-0 fst-italic">
+            Droid control units, death star class super laser control, clone management systems and many more...
+          </p>
+        </div>
+
+        <div class="row p-3">
+          <div class="table-responsive my-3">
+            <table class="table table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Model</th>
+                  <th>Specs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CPU</td>
+                  <td>ARMoid 6080x</td>
+                  <td>Too powerful!</td>
+                </tr>
+                <tr>
+                  <td>GPU</td>
+                  <td>NVidioid 400900x</td>
+                  <td>9800fps at 210000p</td>
+                </tr>
+                <tr>
+                  <td>Storage</td>
+                  <td>BantaStore 5900</td>
+                  <td>If you find any data, give it back to us</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h3 class="display-6 my-4">Other customers also bought...</h3>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-3">
+            <a href="empire2000.html">
+              <img class="img-fluid" src="/images/products/build3.jpg" alt="" />
+            </a>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-3">
+            <a href="empire2000.html">
+              <img class="img-fluid" src="/images/products/build4.jpg" alt="" />
+            </a>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-3">
+            <a href="empire2000.html">
+              <img class="img-fluid" src="/images/products/build5.jpg" alt="" />
+            </a>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-3">
+            <a href="empire2000.html">
+              <img class="img-fluid" src="/images/products/build6.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- offcanvas -->
+      <div
+        class="offcanvas offcanvas-start shopping-cart-offcanvas"
+        data-bs-scroll="true"
+        tabindex="-1"
+        id="shoppingCart"
+        aria-label="shoppingCartLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="shoppingCartLabel">Your shopping cart</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Computer</th>
+                  <th>Quantity</th>
+                  <th class="text-center">Price</th>
+                  <th class="text-center">Total</th>
+                  <th>Abc</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-sm-8 col-md-6">
+                    <div class="media">
+                      <img
+                        class="mr-3 thumbnail img-fluid"
+                        width="75"
+                        src="/images/products/build1.jpg"
+                        alt="empire 2000"
+                      />
+                      <div class="media-body">
+                        <h5 class="mt-0 media-heading text-primary">Empire2k</h5>
+                        <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-sm-1 col-md-1" style="text-align: center">
+                    <input type="number" class="form-control" value="2" />
+                  </td>
+                  <td class="col-sm-1 col-md-1 text-center"><strong>W$15k</strong></td>
+                  <td class="col-sm-1 col-md-1 text-center"><strong>W$30k</strong></td>
+                  <td class="col-sm-1 col-md-1">
+                    <button type="button" class="btn btn-danger">X</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-sm-8 col-md-6">
+                    <div class="media">
+                      <img class="mr-3 thumbnail" width="75" src="/images/products/build6.jpg" alt="trooper" />
+                      <div class="media-body">
+                        <h5 class="mt-0 media-heading text-primary">Trooper</h5>
+                        <span>Status: </span><span class="text-warning"><strong>Last items</strong></span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-sm-1 col-md-1" style="text-align: center">
+                    <input type="number" class="form-control" value="1" />
+                  </td>
+                  <td class="col-sm-1 col-md-1 text-center"><strong>W$5k</strong></td>
+                  <td class="col-sm-1 col-md-1 text-center"><strong>W$5k</strong></td>
+                  <td class="col-sm-1 col-md-1">
+                    <button type="button" class="btn btn-danger">X</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right">
+                    <h5>Subtotal</h5>
+                  </td>
+                  <td class="text-center">
+                    <h5><strong>W$40k</strong></h5>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right">
+                    <h5>Shipping</h5>
+                  </td>
+                  <td class="text-center">
+                    <h5><strong>W$10k</strong></h5>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right">
+                    <h3>Total</h3>
+                  </td>
+                  <td class="text-center">
+                    <h3><strong>W$50k</strong></h3>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <form class="m-1">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Promo code" />
+              <div class="input-group-append">
+                <button type="button" class="btn btn-secondary">Redeem</button>
+              </div>
+            </div>
+          </form>
+          <a type="button" href="order.html" class="m-1 btn btn-success"> Go to order page </a>
+
+          <a type="button" href="" class="m-1 btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
+            Clear your shopping cart
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

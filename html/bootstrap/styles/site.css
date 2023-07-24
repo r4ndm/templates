@@ -1,0 +1,50 @@
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-image: url("/images/background1.jpg");
+  background-repeat: repeat;
+}
+
+.card-footer {
+  background: transparent;
+  border-top: 0px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 40rem;
+  max-width: 100vw;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.welcome-carousel-image1 {
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+  background-image: url("../images/carousel1.jpg");
+}
+
+.welcome-carousel-image2 {
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+  background-image: url("../images/carousel2.jpg");
+}
+
+.welcome-carousel-image3 {
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+  background-image: url("../images/carousel3.jpg");
+}
+
+/* Shopping cart offcanvas */
+.shopping-cart-offcanvas {
+  width: 500px;
+}

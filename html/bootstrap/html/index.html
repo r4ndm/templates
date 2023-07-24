@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BPS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/site.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="/images/jcc-logo-small.jpg"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="JCC Logo"
+            />
+            JCC
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="nav-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Computers
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="nav-dropdown">
+                  <li><a class="dropdown-item" href="amdoids.html">AMDroids</a></li>
+                  <li><a class="dropdown-item" href="inteloids.html">Inteloids</a></li>
+                  <li><a class="dropdown-item" href="armoids.html">ARMoids</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="allcomputers.html">All computers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="order.html">Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="membership.html"> Membership </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container" role="main">
+      <div id="welcomeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#welcomeCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Welcome 1"
+          ></button>
+          <button type="button" data-bs-target="#welcomeCarousel" data-bs-slide-to="1" aria-label="Welcome 2"></button>
+          <button type="button" data-bs-target="#welcomeCarousel" data-bs-slide-to="2" aria-label="Welcome 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item welcome-carousel-image1 active">
+            <div class="carousel-caption">
+              <h1>Welcome to JCC</h1>
+              <p>Home to the best computers in the universe</p>
+            </div>
+          </div>
+          <div class="carousel-item welcome-carousel-image2">
+            <div class="carousel-caption text-start">
+              <h1>Discover our club membership</h1>
+              <p>Earn rewards on every purchase, redeem for free drinks at Chalmun Cantina</p>
+              <p><a class="btn btn-lg btn-primary" href="membership.html" role="button">Sign up today</a></p>
+            </div>
+          </div>
+          <div class="carousel-item welcome-carousel-image3">
+            <div class="carousel-caption text-end">
+              <h1>Browse the computers of Mos Eisley</h1>
+              <p>The very best computers with the very best components</p>
+              <p><a class="btn btn-lg btn-primary" href="allcomputers.html" role="button">See computers</a></p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#welcomeCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#welcomeCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <nav aria-label="breadcrumb" class="my-3 ms-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+      </nav>
+
+      <div class="container history">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="pb-4 mb-4 fst-italic">JCC</h2>
+            <p>
+              <b>Jawa Computer Company</b> makes the best computers in the universe. We sell from our shop in the marketplace, 
+              but please note we often have to change locations on short notice. If you can find it, it is a 
+              <i>very beautiful store.</i> <br />We sell many computers each day. We get requests from all over the 
+              universe and will do our best to set you up with one. Our friendly and good nature has got us many
+              customers who appreciate our honesty and the quality of our products.
+            </p>
+            <p>
+              At JCC we only use good quality components <s>stolen</s> acquired from many sources. 
+              We only accept wupiupis, no credit and we don't issue receipts (we hope you understand). But we do stand 
+              by our products. 
+            </p>
+          </div>
+
+          <aside class="col-lg-4">
+            <div class="p-4 mb-3 mt-2 bg-light rounded">
+              <h4>Legal disclaimer</h4>
+              <p class="mb-0 fst-italic">
+                Any similarity of our product or components to what you or your friends may be missing is
+              purely coincidental.
+              </p>
+            </div>
+
+            <div class="p-4 mb-3 bg-secondary rounded">
+              <h4 class="text-white">Contact us</h4>
+              <p class="mb-0 text-white rfs-text">Send us your questions via info@jcc.com</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="container history">
+        <h2 class="pb-4 mb-2 mt-5">Best deals</h2>
+        <div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-4">
+          <div class="col">
+            <div class="card rounded mb-4 shadow-sm">
+              <img class="card-img-top" src="/images/products/build1.jpg" />
+              <div class="card-body">
+                <h5 class="card-title">Empire 2000</h5>
+                <p class="card-text">Approved by the Galactic Empire!</p>
+              </div>
+              <div class="card-footer">
+                <a href="empire2000.html" class="btn btn-primary">View details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card rounded mb-4 shadow-sm">
+              <img class="card-img-top" src="/images/products/build2.jpg" />
+              <div class="card-body">
+                <h5 class="card-title">Rainbow One</h5>
+                <p class="card-text">So bright!</p>
+              </div>
+              <div class="card-footer">
+                <a href="empire2000.html" class="btn btn-primary">View details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card rounded mb-4 shadow-sm">
+              <img class="card-img-top" src="/images/products/build3.jpg" />
+              <div class="card-body">
+                <h5 class="card-title">Velocity Max</h5>
+                <p class="card-text">Asthetic <s>missing</s> open case concept!</p>
+              </div>
+              <div class="card-footer">
+                <a href="empire2000.html" class="btn btn-primary">View details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
