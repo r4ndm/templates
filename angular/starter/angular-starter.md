@@ -24,10 +24,10 @@ References to start an Angular project.
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
       }
       ```
-      **Note1**: for html, VSCode default formatter is preferable<p>
+      **Note1**: ~~for html, VSCode default formatter is preferable~~ can use Prettier for html formatting as long as line size is set to long (120 or 140)<p>
       **Note2**: these could be set at the workspace level, but will generate error when the project is opened and Prettier extension is not installed
 
 ### Steps:
@@ -45,9 +45,6 @@ References to start an Angular project.
      "editor.detectIndentation": false,
      "editor.wordWrapColumn": 140,
      "editor.wordWrap": "wordWrapColumn",
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "prettier.printWidth": 140
     ```
