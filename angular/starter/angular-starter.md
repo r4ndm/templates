@@ -65,7 +65,8 @@ References to start an Angular project.
    "noImplicitAny": true,
    "suppressImplicitAnyIndexErrors": true
    ```
-   https://angular.io/guide/typescript-configuration
+   https://angular.io/guide/typescript-configuration<p>
+   suppressImplicitAnyIndexErrors has been deprecated, so needs to be removed
 
 1. Linting with eslint: install and configure eslint:
    1. First time you run "ng lint" (Angular CLI 14 and above), it will install and configure eslint. @angular/eslint, @typescript-eslint packages are installed and lint command is added to package.json. .eslintrc.json file is created
