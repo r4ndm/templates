@@ -66,7 +66,7 @@ References to start an Angular project.
    "suppressImplicitAnyIndexErrors": true
    ```
    https://angular.io/guide/typescript-configuration<p>
-   suppressImplicitAnyIndexErrors has been deprecated, so needs to be removed
+   **suppressImplicitAnyIndexErrors** has been deprecated, so needs to be removed
 
 1. Linting with eslint: install and configure eslint:
    1. First time you run "ng lint" (Angular CLI 14 and above), it will install and configure eslint. @angular/eslint, @typescript-eslint packages are installed and lint command is added to package.json. .eslintrc.json file is created
@@ -80,7 +80,12 @@ References to start an Angular project.
         "plugin:@typescript-eslint/strict"
       ]
       ```
-      
+      If using the last 2 rule sets, an additional parserOptions setting is needed in .eslintrc.json (see https://github.com/angular-eslint/angular-eslint/blob/main/docs/RULES_REQUIRING_TYPE_INFORMATION.md)
+      ```json
+      "parserOptions": {
+        "project": ["tsconfig.(app|spec).json"]
+      },
+      ```
    1. To turn rules on or off or change the severity level, update .eslintrc.json file. 
       1. Disable (remove or set error level to off) directive-selector and component-selector rules in .eslintrc.json unless all selectors have the same prefix
       1. To disable empty class rule: 
