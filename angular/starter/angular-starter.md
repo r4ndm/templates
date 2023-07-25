@@ -4,7 +4,7 @@ References to start an Angular project.
 
 
 ### Pre-requisites
-1. npm
+1. npm (pnpm or yarn depending upon package manager choice)
 1. Angular installed globally (npm install -g @angular/cli). Global install is better if we are starting the project with ng new
 1. VSCode
 1. VSCode Prettier plugin - to format from within VSCode editor. You may want to set it as the default formatter in your user level settings.json:
@@ -90,13 +90,10 @@ References to start an Angular project.
       1. Disable (remove or set error level to off) directive-selector and component-selector rules in .eslintrc.json unless all selectors have the same prefix
       1. To disable empty class rule: 
          ```json
-         "@typescript-eslint/no-extraneous-class": [
-            "off"
-         ]
+         "@typescript-eslint/no-extraneous-class": [ "off" ]
          ```
       1. Other rules that may help when getting started:
          ```json
-         "@typescript-eslint/no-extraneous-class": [ "off" ],
          "@typescript-eslint/no-inferrable-types": [ "off" ],
          "@typescript-eslint/explicit-function-return-type": [ "warn" ],
          "@typescript-eslint/no-explicit-any": [ "off" ]
