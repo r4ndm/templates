@@ -104,7 +104,7 @@ References to start an Angular project.
          For example, to force functions to specify return types: https://typescript-eslint.io/rules/explicit-function-return-type
       
    1. Prettier/ESLint integration: for Prettier and ESLint to play nice together (https://typescript-eslint.io/docs/linting/configs/#prettier):
-      1. Install eslint-config-prettier: ```npm install eslint-config-prettier --save-dev```
+      1. Install eslint-config-prettier: ```npm install eslint-config-prettier --save-dev``` or ```pnpm add eslint-config-prettier --save-dev|-D```
       1. Add "prettier" to eslintrc.json "extends" array:
          ```json
          "extends": [
