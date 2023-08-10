@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="left">
+        <img class="logo" src="/assets/images/logo.png" alt="logo" />
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <a routerLink="/catalog">Catalog</a>
+        <a routerLink="/cart">Cart</a>
+    </div>
+
+    <div class="right" *ngIf="!signedIn">
+        <a routerLink="/sign-in">Sign In</a>
+        <a routerLink="" class="cta">Register</a>
+    </div>
+    <div class="right" *ngIf="signedIn">
+        <img src="/assets/images/profile.png" alt="profile" (click)="toggleSignOutMenu()" (keydown)="toggleSignOutMenu()" tabindex="0">
+        <div class="sign-out" *ngIf="showSignOutMenu">
+            <button (click)="signOut()">Sign Out</button>
+        </div>
+    </div>
+</div>

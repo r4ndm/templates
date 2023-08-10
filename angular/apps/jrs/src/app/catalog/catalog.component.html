@@ -1,0 +1,19 @@
+<div class="containers">
+  <!-- <div class="filters">
+    <a class="button" (click)="currentFilter = 'Heads'">Heads</a>
+    <a class="button" (click)="currentFilter = 'Arms'">Arms</a>
+    <a class="button" (click)="currentFilter = 'Torsos'">Torsos</a>
+    <a class="button" (click)="currentFilter = 'Bases'">Bases</a>
+    <a class="button" (click)="currentFilter = 'All'">All</a>
+  </div> -->
+  <div class="filters">
+    <div class="filterButton" *ngFor="let filter of filters">
+      <a class="button" tabindex="0" (click)="currentFilter = filter" (keydown)="currentFilter=filter">{{ filter }}</a>
+    </div>
+  </div>
+  <ul class="products">
+    <li class="product-item" *ngFor="let product of getFilteredProducts()">
+      <bot-product-details [product]="product" (buttonPressed)="addToCart(product)"></bot-product-details>
+    </li>
+  </ul>
+</div>

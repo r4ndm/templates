@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="header">Your Cart</h1>
+
+  <div class="empty-cart" *ngIf="cartItems.length === 0">You have no items in your cart</div>
+  <div class="container" *ngIf="cartItems.length > 0">
+    <ul class="cart">
+      <li class="cart-item" *ngFor="let product of cartItems">
+        <bot-product-details [product]="product" [mode]="'cart'" (buttonPressed)="removeFromCart(product)"></bot-product-details>
+      </li>
+    </ul>
+    <div class="total">Total: {{ cartTotal | currency }}</div>
+  </div>
+</div>
