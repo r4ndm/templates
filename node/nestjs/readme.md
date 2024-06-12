@@ -44,4 +44,10 @@ Steps to start from scratch in an empty folder:
       ```
    1. In vscode workspace setings for the project, set preferences as in [workspace-settings.json](./workspace-settings.json)
    1. Edit .prettierrc to customize as needed. See [.prettierrc](./.prettierrc)
-
+1. Commands:
+   ```sh
+   npm run lint
+   npm run build
+   npm run start:dev
+   ```
+1. Test response on http://localhost:3000
