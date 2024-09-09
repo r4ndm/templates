@@ -16,7 +16,7 @@ Steps to start from scratch in an empty folder:
 
 #### Steps:
 1. git: git init, git remote add origin - any git initialization if needed. Create .gitignore
-1. nest new project-name
+1. ```nest new project-name```
    1. can choose between npm, yarn or pnpm for package manager
    1. installs typescript, creates tsconfig.json
    1. eslint, including eslint.js
