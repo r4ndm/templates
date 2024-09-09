@@ -6,8 +6,5 @@
         "editor.wordWrapColumn": 140,
         "editor.wordWrap": "wordWrapColumn"
     },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
     "prettier.printWidth": 140
 }
