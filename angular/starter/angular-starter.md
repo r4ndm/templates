@@ -29,7 +29,9 @@ References to start an Angular project.
       ```
       **Note1**: ~~for html, VSCode default formatter is preferable~~ can use Prettier for html formatting as long as line size is set to long (120 or 140)<p>
       **Note2**: these could be set at the workspace level, but will generate error when the project is opened and Prettier extension is not installed
-
+  1. VSCode plugins: not necessarily needed but will help:
+     1. Angular Language Service (https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+     1. HTML CSS Support (https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
 ### Steps:
 1. Create a new Angular app in the current folder:
    ```sh
