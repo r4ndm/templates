@@ -5,7 +5,8 @@
     "packageManager": "pnpm",
     "schematicCollections": [
       "@angular-eslint/schematics"
-    ]
+    ],
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -17,11 +18,12 @@
       "prefix": "bot",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/jrs",
+            "outputPath": {
+              "base": "dist/jrs"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -33,7 +35,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -52,9 +55,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -66,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "jrs:build:production"
+              "buildTarget": "jrs:build:production"
             },
             "development": {
-              "browserTarget": "jrs:build:development"
+              "buildTarget": "jrs:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "jrs:build"
+            "buildTarget": "jrs:build"
           }
         },
         "test": {
