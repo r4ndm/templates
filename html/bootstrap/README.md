@@ -16,6 +16,6 @@ Bootstrap enhanced version of HTML template.
       crossorigin="anonymous"
     ></script>
    ```
-1. Use bootstrap components, grid, formatting etc.
+1. See html and css files for bootstrap components, grid, formatting, navbar etc.
 
 
