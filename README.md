@@ -10,6 +10,6 @@ Templates and starter code
       * [nestjs](node/nestjs): starter for NestJs based servers
    * [angular](angular)
       * [angular-starter.md](angular/starter/angular-starter.md): setup to start all Angular projects
-      * [JRS](angular/starter/apps/jrs): basic angular app without any dependencies. Angular with plain html and css
+      * [JRS](angular/apps/jrs): basic angular app without any dependencies. Angular with plain html and css
 
 
