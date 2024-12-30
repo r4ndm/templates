@@ -39,6 +39,7 @@ References to start an Angular project.
    ```
    A new angular app is generated and dev packages are installed. The app can be build (npm run build), started (npm start) and accessed at http://localhost:4200 <p>
    Use --package-manager option if using something other than npm
+   Use --standalone=false to include app module (as of Angular 19)
 
 1. VSCode workspace level settings: customize .vscode/settings.json file. Ctrl > Shift > P > Open Workspace Settings (JSON), add:
    ```json
