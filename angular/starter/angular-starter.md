@@ -72,6 +72,14 @@ References to start an Angular project.
    **suppressImplicitAnyIndexErrors** has been deprecated, so needs to be removed
 
 1. Linting with eslint: see [lint.md](lint.md)
+1. Edit angular.json to add any asset (e.g. images) folders: in projects > project name > architect > build > assets:
+   ```json
+   "assets": [
+      ...
+      "src/favicon.ico",
+      "src/assets"
+   ],
+   ```
 1. Add a component: <br>
    ```ng generate component my-component```
    <br>
