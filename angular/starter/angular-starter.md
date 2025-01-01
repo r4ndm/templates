@@ -74,7 +74,9 @@ References to start an Angular project.
    **suppressImplicitAnyIndexErrors** has been deprecated, so needs to be removed
 
 1. Linting with eslint: see [lint.md](lint.md)
-1. Edit angular.json to add any asset (e.g. images) folders: in projects > project name > architect > build > assets:
+1. NOTE as of v18, assets is mapped to public folder, so this is not required. Put asset files in public folder and refer to them in code.
+   <br>
+   Edit angular.json to add any asset (e.g. images) folders: in projects > project name > architect > build > assets:
    ```json
    "assets": [
       ...
