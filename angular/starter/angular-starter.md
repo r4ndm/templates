@@ -76,7 +76,7 @@ References to start an Angular project.
 1. Linting with eslint: see [lint.md](lint.md)
 1. NOTE as of v18, assets is mapped to public folder, so this is not required. Put asset files in public folder and refer to them in code.
    <br>
-   Edit angular.json to add any asset (e.g. images) folders: in projects > project name > architect > build > assets:
+   But if you do put assets folder somewhere else, edit angular.json to add any asset (e.g. images) folders: in projects > project name > architect > build > assets:
    ```json
    "assets": [
       ...
