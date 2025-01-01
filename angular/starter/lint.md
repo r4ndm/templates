@@ -11,15 +11,13 @@ Install and use eslint for linting. Eslint can be set up two ways:
    1. Run ng lint. First time you run "ng lint" (Angular CLI 14 and above), it will install and configure eslint.
    1. Run ```ng add angular-eslint```. See (https://github.com/angular-eslint/angular-eslint)
 
-<p>
-The following changes are made to the project:
+The following changes are made to the project:<br>
    1. package.json: 
       1. lint command is added
       1. eslint, angular-eslint and typescript-eslint packages are added in dev dependencies
    1. eslint.config.js file is added (.eslintrc.json prior to eslint v9)
    1. angular.json is modified to include lint
-</p>
-<p>
+
 
 ### Use
 Customize rules for appropriate level of checking. **NOTE** the changes below are using the old .eslintrc.json file syntax. Use equivalent [eslint.config.mjs](eslint.config.mjs) new flat file syntax.
