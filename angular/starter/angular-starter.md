@@ -42,6 +42,8 @@ References to start an Angular project.
    * Use --standalone=false to include app module (as of Angular 19)
 
 1. VSCode workspace level settings: customize .vscode/settings.json file. Ctrl > Shift > P > Open Workspace Settings (JSON), add:
+   <br>
+   (NOTE not needed if already in user settings, however use workspace settings for consistency across project members)
    ```json
    "[typescript]": {
      "editor.tabSize": 2,
@@ -76,7 +78,7 @@ References to start an Angular project.
    ```json
    "assets": [
       ...
-      "src/favicon.ico",
+      "public/favicon.ico",
       "src/assets"
    ],
    ```
