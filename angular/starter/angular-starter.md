@@ -78,7 +78,6 @@ References to start an Angular project.
    ```json
    "assets": [
       ...
-      "public/favicon.ico",
       "src/assets"
    ],
    ```
