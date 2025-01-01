@@ -20,7 +20,9 @@ The following changes are made to the project:<br>
 
 
 ### Use
-Customize rules for appropriate level of checking. **NOTE** the changes below are using the old .eslintrc.json file syntax. Use equivalent [eslint.config.mjs](eslint.config.mjs) new flat file syntax.
+Customize rules for appropriate level of checking.
+<br>
+**NOTE** the changes below are using the old .eslintrc.json file syntax. Equivalent [eslint.config.mjs](eslint.config.mjs) is the new flat file syntax. Replace the generated eslint.config.js with this eslint.config.mjs file.
 
    1. Extend .eslintrc.json file for stricter type checking (https://typescript-eslint.io/docs/linting/configs/):
       ```json
