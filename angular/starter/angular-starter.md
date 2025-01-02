@@ -108,8 +108,8 @@ References to start an Angular project.
 ### Other notes
 1. If using standalone components, things that were previously imported in module need to be individually imported in each component that use it. For example, import RouterModule in components that use routerLink, CommonModule when using ng directives
 1. With assets mapped to public folder (angular v18+), say there is an images folder in public, to refer to files:
-   1. In HTML files, use path: images/file.jpg. For example: ` <img src="images/products/build1.jpg" />`
-   2. In CSS file, use path: /images/file.jpg. For example: ` background-image: url("/images/carousel2.jpg");`
+   1. In HTML files, use path: images/file.jpg or full path /images/file.jpg. For example: `<img src="images/products/build1.jpg" />` or `<img src="/images/products/build1.jpg" />`
+   2. In CSS file, only full path works: /images/file.jpg. For example: ` background-image: url("/images/carousel2.jpg");`
       <br>
    Q: why this discrepancy?
 
