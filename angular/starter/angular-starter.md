@@ -105,3 +105,7 @@ References to start an Angular project.
       ```
    Or try ng-bootstrap https://ng-bootstrap.github.io/#/home
    
+### Other notes
+1. If using standalone components, things that were previously imported in module need to be individually imported in each component that use it. For example, import RouterModule in components that use routerLink, CommonModule when using ng directives
+
+   
