@@ -87,7 +87,8 @@ References to start an Angular project.
    ```ng generate component my-component```
    <br>
    Generates the new component in a new folder with the same name inside src/app. To create in existing folder, use --flat option: ```ng g c myfolder/my-component --flat```
-   
+1. Add services: <br>
+   `ng generate service catalog/catalog` or `ng g s cart/cart --flat` (to generate in existing folder)
 <br>
 
 ### Additional resources
