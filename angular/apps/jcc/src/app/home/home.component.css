@@ -1,0 +1,47 @@
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 40rem;
+    max-width: 100vw;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .welcome-carousel-image1 {
+    box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+    background-image: url("/images/carousel1.jpg");
+  }
+  
+  .welcome-carousel-image2 {
+    box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+    background-image: url("/images/carousel2.jpg");
+  }
+  
+  .welcome-carousel-image3 {
+    box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+    background-image: url("/images/carousel3.jpg");
+  }
+
+  .card {
+    width: 300px;
+  }
+
+  .card-img-top {
+    width: 175px;
+    height: 175px;
+  }
+
+  .card-text {
+    height: 50px;
+  }
+
+  .card-footer {
+  background: transparent;
+  border-top: 0px;
+}
+  

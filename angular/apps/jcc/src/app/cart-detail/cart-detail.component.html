@@ -1,0 +1,15 @@
+<div class="cart-detail">
+  <div class="cart-detail-item">
+    <img [src]="getImageUrl()" [alt]="product.name" />
+    <div class="cart-detail-item-info">
+      <div class="name">{{ product.name }}</div>
+      <div class="description">{{ product.description }}</div>
+      <div class="category">Part Type: {{ product.category }}</div>
+    </div>
+  </div>
+  <div class="price">
+    <div [ngClass]="getDiscountClasses(product)">Wu{{ product.price | currency }}</div>
+    <div *ngIf="product?.discount !== 0" class="discount">Wu{{ product.price! * (1 - product.discount / 100) | currency }}</div>
+    <button class="btn" (click)="removeButtonClicked()">Remove</button>
+  </div>
+</div>

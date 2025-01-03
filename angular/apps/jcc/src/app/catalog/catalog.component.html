@@ -1,0 +1,22 @@
+<main role="main">
+  <div class="container">
+    <nav class="my-3 ms-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Computers</li>
+      </ol>
+    </nav>
+
+    <div class="filters">
+      <div class="filterButton" *ngFor="let filter of filters">
+        <a class="button" tabindex="0" (click)="currentFilter = filter" (keydown)="currentFilter=filter">{{ filter }}</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let product of getProducts()" class="col-md-4">
+        <app-product-summary [product]="product" (detailButtonPressed)="viewDetails($event)"></app-product-summary>
+      </div>
+    </div>
+  </div>
+</main>

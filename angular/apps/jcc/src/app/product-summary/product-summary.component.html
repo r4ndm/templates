@@ -1,0 +1,6 @@
+<div class="product-summary">
+  <img width="175" height="175" [src]="getImageUrl()" [alt]="product.name" />
+  <h2>{{product.name}}</h2>
+  <p>{{product.description}}</p>
+  <p><a class="btn btn-primary" (click)="detailButtonClicked()" role="button">View details</a></p>
+</div>

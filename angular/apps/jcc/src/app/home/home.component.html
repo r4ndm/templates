@@ -1,0 +1,102 @@
+<main class="container" role="main">
+  <div id="welcomeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#welcomeCarousel"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Welcome 1"
+      ></button>
+      <button type="button" data-bs-target="#welcomeCarousel" data-bs-slide-to="1" aria-label="Welcome 2"></button>
+      <button type="button" data-bs-target="#welcomeCarousel" data-bs-slide-to="2" aria-label="Welcome 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item welcome-carousel-image1 active">
+        <div class="carousel-caption">
+          <h1>Welcome to JCC</h1>
+          <p>Home to the best computers in the universe</p>
+        </div>
+      </div>
+      <div class="carousel-item welcome-carousel-image2">
+        <div class="carousel-caption text-start">
+          <h1>Discover our club membership</h1>
+          <p>Earn rewards on every purchase, redeem for free drinks at Chalmun Cantina</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="/membership" role="button">Sign up today</a></p>
+        </div>
+      </div>
+      <div class="carousel-item welcome-carousel-image3">
+        <div class="carousel-caption text-end">
+          <h1>Browse the computers of Mos Eisley</h1>
+          <p>The very best computers with the very best components</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="/computers" role="button">See computers</a></p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#welcomeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#welcomeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <nav aria-label="breadcrumb" class="my-3 ms-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+  </nav>
+
+  <div class="container history">
+    <div class="row">
+      <div class="col-lg-8">
+        <h2 class="pb-4 mb-4 fst-italic">JCC</h2>
+        <p>
+          <b>Jawa Computer Company</b> makes the best computers in the universe. We sell from our shop in the marketplace, but please note
+          we often have to change locations on short notice. If you can find it, it is a <i>very beautiful store.</i> <br />We sell many
+          computers each day. We get requests from all over the universe and will do our best to set you up with one. Our friendly and good
+          nature has got us many customers who appreciate our honesty and the quality of our products.
+        </p>
+        <p>
+          At JCC we only use good quality components <s>stolen</s> acquired from many sources. We only accept wupiupis, no credit and we
+          don't issue receipts (we hope you understand). But we do stand by our products.
+        </p>
+      </div>
+
+      <aside class="col-lg-4">
+        <div class="p-4 mb-3 mt-2 bg-light rounded">
+          <h4>Legal disclaimer</h4>
+          <p class="mb-0 fst-italic">
+            Any similarity of our product or components to what you or your friends may be missing is purely coincidental.
+          </p>
+        </div>
+
+        <div class="p-4 mb-3 bg-secondary rounded">
+          <h4 class="text-white">Contact us</h4>
+          <p class="mb-0 text-white rfs-text">Send us your questions via info&#64;jcc.com</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="container history">
+    <h2 class="pb-4 mb-2 mt-5">Best deals</h2>
+    <div class="row row-cols-1 row-cols-lg-3 row-cols-xxl-4 g-4">
+      <div class="col" *ngFor="let product of getBestDeals()">
+        <div class="card rounded mb-4 shadow-sm">
+          <img class="card-img-top mx-auto mt-2" [src]="getProductImageUrl(product.id)" />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+          </div>
+          <div class="card-footer mx-auto">
+            <a [routerLink]="['/detail', product?.id]" class="btn btn-primary">View details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
