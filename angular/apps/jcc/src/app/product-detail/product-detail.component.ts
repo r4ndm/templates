@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CatalogService } from '../catalog/catalog.service';
 import { IProduct } from '../catalog/product.interface';
@@ -26,7 +26,7 @@ export class ProductDetailComponent implements OnInit {
 
   public ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.productId = params['id'];
+      this.productId = params['id'] as string;
       this.product = this.catalogService.getProduct(this.productId);
     });
   }
@@ -49,6 +49,8 @@ export class ProductDetailComponent implements OnInit {
 
   protected addToCart(): void {
     //TODO: add using Id instead of product
-    this.cartService.add(this.product!);
+    if (this.product) {
+      this.cartService.add(this.product);
+    }
   }
 }

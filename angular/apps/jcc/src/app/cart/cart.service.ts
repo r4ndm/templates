@@ -21,7 +21,7 @@ export class CartService {
     this.cart.push(product);
   }
 
-  public removeId(productId: string) {
+  public removeId(productId: string): void {
     const index = this.cart.findIndex(product => product.id === productId);
 
     if (index > -1) {
