@@ -6,21 +6,21 @@ import { CatalogService } from './catalog.service';
   providedIn: 'root'
 })
 export class RecommendationService {
-
-  constructor(private catalogService: CatalogService) { }
+  constructor(private catalogService: CatalogService) {}
 
   public isBestSeller(id: string): boolean {
     return id === '1001' || id === '1005';
   }
 
   public getAlsoBought(id: string): IProduct[] {
-    let alsoBought: IProduct[] = this.catalogService.getProducts().filter(product => product.id === '1001' || product.id === '1005');
+    const alsoBought: IProduct[] = this.catalogService
+      .getProducts()
+      .filter((product) => (product.id === '1001' || product.id === '1005') && product.id !== id);
 
     return alsoBought;
-
   }
 
   public getBestDeals(): IProduct[] {
-    return this.catalogService.getProducts().filter(product => product.discount > 0);
+    return this.catalogService.getProducts().filter((product) => product.discount > 0);
   }
 }

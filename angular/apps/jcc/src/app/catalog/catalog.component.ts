@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { ProductSummaryComponent } from '../product-summary/product-summary.component';
@@ -25,7 +25,6 @@ export class CatalogComponent {
   }
 
   public viewDetails(product: IProduct): void {
-    console.log(`Viewing details for ${product.name}`);
-    this.router.navigate(['/detail', product.id]); 
+    void this.router.navigate(['/detail', product.id]); 
   }
 }

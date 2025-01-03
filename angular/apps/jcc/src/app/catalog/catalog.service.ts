@@ -19,7 +19,7 @@ export class CatalogService {
   }
 
   public getProductImageUrl(id: string): string {
-    let product = this.getProduct(id);
+    const product = this.getProduct(id);
     return product ? `images/products/${product.image}` : '';
   }
 

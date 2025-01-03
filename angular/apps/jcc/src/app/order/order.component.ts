@@ -19,6 +19,8 @@ export class OrderComponent {
 
   public onSubmit(): void {
     console.log('Order submitted');
-    this.router.navigate(['/confirmation']);
+
+    //void used here to avoid floating promise lint error
+    void this.router.navigate(['/confirmation']);
   }
 }
