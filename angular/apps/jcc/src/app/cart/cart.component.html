@@ -1,0 +1,22 @@
+<div class="container">
+  <nav class="my-3 ms-3" style="--bs-breadcrumb-divider: '>'">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cart</li>
+    </ol>
+  </nav>
+
+
+  <h1 class="header mt-5">Your Cart</h1>
+
+  <div class="empty-cart" *ngIf="cartItems.length === 0">You have no items in your cart</div>
+  <div class="container" *ngIf="cartItems.length > 0">
+    <ul class="cart">
+      <li class="cart-item" *ngFor="let product of cartItems">
+        <app-cart-detail [product]="product" (buttonPressed)="removeFromCart($event)"></app-cart-detail>
+      </li>
+    </ul>
+    <div class="total">Total: Wu{{ cartTotal | currency }}</div>
+    <button class="btn btn-success order-btn" routerLink="/order">Order</button>
+  </div>
+</div>
