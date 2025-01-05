@@ -7,6 +7,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { OrderComponent } from './order/order.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { CartComponent } from './cart/cart.component';
+import { ErrorComponent } from './error/error.component';
+import { ProductDetailRouteActivator } from './product-detail/product-detail.route.activator';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent, title: 'JRS | Home' },
@@ -14,8 +16,9 @@ export const routes: Routes = [
   { path: 'cart', component: CartComponent, title: 'JRS | Cart' },
   { path: 'membership', component: MembershipComponent, title: 'JCC | Membership' },
   { path: 'contact', component: ContactComponent, title: 'JCC | Contact' },
-  { path: 'detail/:id', component: ProductDetailComponent, title: 'JCC | Detail' },
+  { path: 'detail/:id', component: ProductDetailComponent, title: 'JCC | Detail', canActivate: [ProductDetailRouteActivator] },
   { path: 'order', component: OrderComponent, title: 'JCC | Detail' },
   { path: 'confirmation', component: OrderConfirmationComponent, title: 'JCC | Confirmation' },
+  { path: '404', component: ErrorComponent, title: 'JCC | Error' },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
