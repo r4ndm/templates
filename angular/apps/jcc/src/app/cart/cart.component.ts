@@ -5,10 +5,11 @@ import { CatalogService } from '../catalog/catalog.service';
 import { CommonModule } from '@angular/common';
 import { CartDetailComponent } from "../cart-detail/cart-detail.component";
 import { RouterModule } from '@angular/router';
+import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule, CartDetailComponent, RouterModule],
+  imports: [CommonModule, CartDetailComponent, RouterModule, BreadcrumbComponent],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })

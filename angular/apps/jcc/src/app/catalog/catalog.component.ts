@@ -4,10 +4,11 @@ import { Router, RouterModule } from '@angular/router';
 import { ProductSummaryComponent } from '../product-summary/product-summary.component';
 import { CatalogService } from './catalog.service';
 import { IProduct } from './product.interface';
+import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-catalog',
-  imports: [CommonModule, RouterModule, ProductSummaryComponent],
+  imports: [CommonModule, RouterModule, ProductSummaryComponent, BreadcrumbComponent],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css'
 })

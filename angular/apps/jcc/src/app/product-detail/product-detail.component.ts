@@ -5,10 +5,11 @@ import { IProduct } from '../catalog/product.interface';
 import { CommonModule } from '@angular/common';
 import { RecommendationService } from '../catalog/recommendation.service';
 import { CartService } from '../cart/cart.service';
+import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, BreadcrumbComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
