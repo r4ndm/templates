@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 import { RecommendationService } from '../catalog/recommendation.service';
 import { IProduct } from '../catalog/product.interface';
 import { CatalogService } from '../catalog/catalog.service';
+import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, BreadcrumbComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
