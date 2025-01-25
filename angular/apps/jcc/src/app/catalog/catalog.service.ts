@@ -32,7 +32,8 @@ export class CatalogService {
   }
 
   public getProductsOfCategory(category: string): IProduct[] {
-    return this.products.filter(p => category === 'All' || p.category === category);
+    const cat = category.toLowerCase();
+    return this.products.filter(p => cat === 'all' || p.category.toLowerCase() === cat);
   }
 
   private initProducts(): void {

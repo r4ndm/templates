@@ -1,6 +1,7 @@
 ### TODO list
 
 1. Use bootstrap card version of product summary
+1. In navbar, remove catalog filter hardcoding
 1. Link to individual catalog filters (ARMoid etc.)
    1. should also work when routing within page
 1. Move Cart menu item to icon on the right
