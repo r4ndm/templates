@@ -11,9 +11,10 @@ import { ErrorComponent } from './error/error.component';
 import { ProductDetailRouteActivator } from './product-detail/product-detail.route.activator';
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent, title: 'JRS | Home' },
-  { path: 'catalog', component: CatalogComponent, title: 'JRS | Components' },
-  { path: 'cart', component: CartComponent, title: 'JRS | Cart' },
+  { path: 'home', component: HomeComponent, title: 'JCC | Home' },
+  { path: 'catalog', component: CatalogComponent, title: 'JCC | Components' },
+  { path: 'catalog/:filter', component: CatalogComponent, title: 'JCC | Components' },
+  { path: 'cart', component: CartComponent, title: 'JCC | Cart' },
   { path: 'membership', component: MembershipComponent, title: 'JCC | Membership' },
   { path: 'contact', component: ContactComponent, title: 'JCC | Contact' },
   { path: 'detail/:id', component: ProductDetailComponent, title: 'JCC | Detail', canActivate: [ProductDetailRouteActivator] },
