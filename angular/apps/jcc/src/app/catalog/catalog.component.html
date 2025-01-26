@@ -9,10 +9,7 @@
     ></app-breadcrumb>
 
     <div class="filters">
-      <div class="filterButton" *ngFor="let filter of filters">
-        <!-- <a class="button" tabindex="0" (click)="currentFilter = filter" (keydown)="currentFilter = filter">{{ filter }}</a> -->
-        <a class="button" tabindex="0" [routerLink]="['/catalog/', filter]">{{ filter }}</a>
-      </div>
+        <a *ngFor="let filter of filters" class="button" tabindex="0" [routerLink]="['/catalog/', filter]">{{ filter }}</a>
     </div>
 
     <div class="row">
