@@ -1,0 +1,9 @@
+<div class="card">
+    <img [src]="getImageUrl()" class="card-img-top" [alt]="product.name">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <a class="btn btn-primary" role="button" (click)="detailButtonClicked()">View details</a>
+      <a class="btn btn-success float-end" role="button" (click)="addCartButtonClicked()"><i class="bi bi-cart-plus h5"></i></a>
+    </div>
+  </div>
