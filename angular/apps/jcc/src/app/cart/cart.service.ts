@@ -37,6 +37,10 @@ export class CartService {
     }
   }
 
+  public get count(): number {
+    return this.cart.length;
+  }
+
   public getTotal(): number {
     return this.cart.reduce((prev, next) => {
       const discount = next.discount && next.discount > 0 ? 1 - next.discount / 100 : 1;
