@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../cart/cart.service';
 import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
+import { CatalogService } from '../catalog/catalog.service';
 
 @Component({
   selector: 'app-order',
@@ -12,10 +13,10 @@ import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
   styleUrl: './order.component.css'
 })
 export class OrderComponent {
-  constructor(private router: Router, private cartService: CartService) {}
+  constructor(private router: Router, private cartService: CartService, private catalogService: CatalogService) {}
 
   protected get cartTotal(): number {
-    return this.cartService.getTotal();
+    return this.catalogService.getTotal(this.cartService.getCart());
   }
 
   public onSubmit(): void {

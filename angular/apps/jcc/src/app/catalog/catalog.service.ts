@@ -6,6 +6,7 @@ import { IProduct } from './product.interface';
 })
 export class CatalogService {
   private products: IProduct[] = [];
+
   constructor() {
     this.initProducts();
   }
@@ -34,6 +35,19 @@ export class CatalogService {
   public getProductsOfCategory(category: string): IProduct[] {
     const cat = category.toLowerCase();
     return this.products.filter(p => cat === 'all' || p.category.toLowerCase() === cat);
+  }
+
+  public getTotal(productIds: string[]): number {
+    return productIds.reduce((prev, next) => {
+      const product = this.getProduct(next);
+
+      if (!product) {
+        return prev;
+      }
+
+      const discount = product.discount && product.discount > 0 ? 1 - product.discount / 100 : 1;
+      return prev + product.price * discount;
+    }, 0);
   }
 
   private initProducts(): void {
