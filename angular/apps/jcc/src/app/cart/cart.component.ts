@@ -21,19 +21,7 @@ export class CartComponent {
   }
 
   public getCartProducts(): IProduct[] {
-    // TODO: why is map not working? 
-    // return this.cartService.getCart().map(this.catalogService.getProduct).filter(p => !!p);
-
-    const products: IProduct[] = [];
-
-    this.cartService.getCart().forEach(productId => {
-      const product = this.catalogService.getProduct(productId);
-      if (product) {
-        products.push(product);
-      }
-    });
-
-    return products;
+    return this.cartService.getCart().map(productId => this.catalogService.getProduct(productId)).filter(p => !!p);
   }
 
   public get cartTotal(): number {
