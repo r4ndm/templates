@@ -1,36 +1,26 @@
 import { Injectable } from '@angular/core';
-import { IProduct } from '../catalog/product.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private cart: IProduct[];
+  private cart: string[];
 
   constructor() {
     this.cart = [];
   }
 
-  public getCart(): IProduct[] {
+  public getCart(): string[] {
     return this.cart;
   }
 
-  //TODO: cart only contain ids
-  public add(product: IProduct): void {
-    this.cart.push(product);
+  public add(productId: string): void {
+    this.cart.push(productId);
   }
 
-  public removeId(productId: string): void {
-    const index = this.cart.findIndex(product => product.id === productId);
-
-    if (index > -1) {
-      this.cart.splice(index, 1);
-    }
-  }
-
-  public remove(product: IProduct): void {
-    const index = this.cart.indexOf(product);
+  public remove(productId: string): void {
+    const index = this.cart.indexOf(productId);
 
     if (index > -1) {
       this.cart.splice(index, 1);
@@ -39,12 +29,5 @@ export class CartService {
 
   public get count(): number {
     return this.cart.length;
-  }
-
-  public getTotal(): number {
-    return this.cart.reduce((prev, next) => {
-      const discount = next.discount && next.discount > 0 ? 1 - next.discount / 100 : 1;
-      return prev + next.price * discount;
-    }, 0);
   }
 }

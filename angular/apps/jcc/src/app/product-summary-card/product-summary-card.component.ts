@@ -23,9 +23,8 @@ export class ProductSummaryCardComponent {
   }
 
   public addCartButtonClicked(): void {
-    //TODO: add using Id instead of product
     if (this.product) {
-      this.cartService.add(this.product);
+      this.cartService.add(this.product.id);
     }
   }
 }

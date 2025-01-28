@@ -16,16 +16,32 @@ import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
 export class CartComponent {
   constructor(private catalogService: CatalogService, private cartService: CartService) {}
 
-  public get cartItems(): IProduct[] {
-    return this.cartService.getCart(); //this.cart;
+  public get cartCount(): number {
+    return this.cartService.count;
+  }
+
+  public get cartProducts(): IProduct[] {
+    // TODO: why is map not working? 
+    // return this.cartService.getCart().map(this.catalogService.getProduct).filter(p => !!p);
+
+    const products: IProduct[] = [];
+
+    this.cartService.getCart().forEach(productId => {
+      const product = this.catalogService.getProduct(productId);
+      if (product) {
+        products.push(product);
+      }
+    });
+
+    return products;
   }
 
   public get cartTotal(): number {
-    return this.cartService.getTotal();
+    return this.catalogService.getTotal(this.cartService.getCart());
   }
 
   public removeFromCart(productId: string): void {
-    this.cartService.removeId(productId);
+    this.cartService.remove(productId);
   }
 
   public getImageUrl(product: IProduct): string {
