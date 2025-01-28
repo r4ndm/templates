@@ -12,7 +12,7 @@
   <div class="empty-cart" *ngIf="cartCount === 0">You have no items in your cart</div>
   <div class="container" *ngIf="cartCount > 0">
     <ul class="cart">
-      <li class="cart-item" *ngFor="let product of cartProducts">
+      <li class="cart-item" *ngFor="let product of getCartProducts()">
         <app-cart-detail [product]="product" (buttonPressed)="removeFromCart($event)"></app-cart-detail>
       </li>
     </ul>

@@ -20,7 +20,7 @@ export class CartComponent {
     return this.cartService.count;
   }
 
-  public get cartProducts(): IProduct[] {
+  public getCartProducts(): IProduct[] {
     // TODO: why is map not working? 
     // return this.cartService.getCart().map(this.catalogService.getProduct).filter(p => !!p);
 
