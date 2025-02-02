@@ -10,6 +10,7 @@
     "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/**/catalog-inmemory.service.ts" // Included temporarily till it is part of the project
   ]
 }
