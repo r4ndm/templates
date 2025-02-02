@@ -1,11 +1,9 @@
 ### TODO list
 
-1. ~~Use bootstrap card version of product summary~~
-1. ~~In navbar, remove catalog filter hardcoding~~
-1. ~~Link to individual catalog filters (ARMoid etc.)~~
-   1. ~~should also work when routing within page~~
-1. ~~Move Cart menu item to icon on the right~~
-1. ~~Show count of items in the cart icon~~
-1. Move catalog to catalog service API:
-   1. create nest.js service in separate repo
-   1. colocate both in mono-repo
+1. ~~Use HttpClient to get data (catalog.json file without backend)~~
+1. Create jcc-server with catalog get API call
+1. Call jcc-server url (directly or through client app passthrough)
+1. Implement loading screen while data is being fetched
+1. Change other catalog service methods to API calls
+1. Change cart service to API calls
+1. Implement ability to switch between in-memory and backend services based on environment
