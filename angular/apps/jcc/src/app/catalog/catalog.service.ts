@@ -12,8 +12,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CatalogService {
   private products: IProduct[] = [];
-  private initializeStarted: boolean = false;
-  private initializeComplete: boolean = false;
+  private initialized: boolean = false;
+  private loading: boolean = false;
   private productUrl: string = 'api/catalog/catalog.json';
 
   constructor(private http: HttpClient) {}
@@ -33,9 +33,9 @@ export class CatalogService {
 
   public getProducts(): IProduct[] {
     // if (!this.products || this.products.length === 0) {
-    if (!this.initializeStarted) {
+    if (!this.initialized && !this.loading) {
+      this.loading = true;
       this.initProducts();
-      this.initializeStarted = true;
     }
 
     return this.products;
@@ -63,14 +63,18 @@ export class CatalogService {
     }, 0);
   }
 
+  public isLoading(): boolean {
+    return this.loading && !this.initialized;
+  }
+
   private initProducts(): void {
     this.http.get<IProduct[]>(this.productUrl).subscribe((products) => {
       // simulate time taken to fetch data
       setTimeout(() => {
-        console.log('done waiting!');
         this.products = products;
-        this.initializeComplete = true;
-      }, 3000);
+        this.initialized = true;
+        this.loading = false;
+      }, 4000);
     });
   }
 }
