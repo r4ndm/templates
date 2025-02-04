@@ -8,11 +8,35 @@
       ]"
     ></app-breadcrumb>
 
-    <div class="filters">
-        <a *ngFor="let filter of filters" class="button" tabindex="0" [routerLink]="['/catalog/', filter]">{{ filter }}</a>
+    <!-- Placeholders -->
+    <div *ngIf="isLoading()" class="filters-placeholder-categories placeholder-glow">
+      <button type="button" class="btn btn-secondary disabled placeholder col-2"></button>
+      <button type="button" class="btn btn-secondary disabled placeholder col-2"></button>
+      <button type="button" class="btn btn-secondary disabled placeholder col-2"></button>
+      <button type="button" class="btn btn-secondary disabled placeholder col-2"></button>
+    </div>
+    <div *ngIf="isLoading()" class="filters-placeholder-cards">
+      <div *ngFor="let i of [0, 1, 2]" class="card col-md-3" aria-hidden="true">
+        <img src="images/blank.png" class="card-img-top placeholder" alt="" />
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-8"></span>
+            <span class="placeholder col-6"></span>
+          </p>
+          <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+        </div>
+      </div>
+    </div>
+    <!-- End placeholders -->
+
+    <div *ngIf="!isLoading()" class="filters">
+      <a *ngFor="let filter of filters" class="button col-2" tabindex="0" [routerLink]="['/catalog/', filter]">{{ filter }}</a>
     </div>
 
-    <div class="row gy-4">
+    <div *ngIf="!isLoading()" class="row gy-4">
       <div *ngFor="let product of getProducts()" class="col-md-4">
         <!-- <app-product-summary [product]="product" (detailButtonPressed)="viewDetails($event)"></app-product-summary> -->
         <app-product-summary-card [product]="product" (detailButtonPressed)="viewDetails($event)"></app-product-summary-card>

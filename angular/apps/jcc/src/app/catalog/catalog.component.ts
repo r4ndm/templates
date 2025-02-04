@@ -33,6 +33,10 @@ export class CatalogComponent implements OnInit {
     return this.catalogService.getProductsOfCategory(this.currentFilter);
   }
 
+  public isLoading(): boolean {
+    return this.catalogService.isLoading();
+  }
+
   public viewDetails(product: IProduct): void {
     void this.router.navigate(['/detail', product.id]);
   }
