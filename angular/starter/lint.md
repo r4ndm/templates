@@ -22,7 +22,7 @@ The following changes are made to the project:<br>
 ### Use
 Customize rules for appropriate level of checking.
 <br>
-**NOTE** the changes below are using the old .eslintrc.json file syntax. Equivalent [eslint.config.mjs](eslint.config.mjs) is the new flat file syntax. Replace the generated eslint.config.js with this eslint.config.mjs file.
+**NOTE** the changes below are using the old .eslintrc.json file syntax. Equivalent [eslint.config.mjs](eslint.config.mjs) is the new flat file syntax. Replace the generated eslint.config.js with this eslint.config.mjs file. See Migration section below to see how to create this file.
 
    1. Extend .eslintrc.json file for stricter type checking (https://typescript-eslint.io/docs/linting/configs/):
       ```json
@@ -75,7 +75,7 @@ Customize rules for appropriate level of checking.
 As of ESLint v9, flat config file eslint.config.js (or .mjs) is the preferred standard. .json files can be migrated: https://eslint.org/docs/latest/use/configure/migration-guide
 <br>
 
-Command: `pnpx @eslint/migrate-config .eslintrc.json`
+Command: `pnpx dlx @eslint/migrate-config .eslintrc.json`
 
 Configuration file precedence: <https://eslint.org/docs/latest/use/configure/configuration-files#configuration-file-precedence>
 

@@ -16,7 +16,7 @@ Steps to start from scratch in an empty folder:
 
 #### Steps:
 1. git: git init, git remote add origin - any git initialization if needed. Create .gitignore
-1. ```nest new project-name```
+1. ```nest new project-name --strict```
    1. can choose between npm, yarn or pnpm for package manager
    1. installs typescript, creates tsconfig.json
    1. eslint, including eslint.js
@@ -26,9 +26,9 @@ Steps to start from scratch in an empty folder:
 1. Files to update:
    1. [tsconfig.json](./tsconfig.json)
       1. Modify default values to enable stricter type checking, e.g. strict, noImplicitAny, strictFunctionTypes etc. See [tsconfig.json](./tsconfig.json)
-   1. [.eslintrc.js](./.eslintrc.js)
-      1. Add stricter @typescript/eslint rules and adjust specific rules to turn them off (see [.eslintrc.js](./.eslintrc.js))
-   1. Prettier - while optional, it automatically added if using Nest CLI
+   1. ~~[.eslintrc.js](./.eslintrc.js)~~ [eslint.config.mjs](./eslint.config.mjs)
+      1. Add stricter rules and adjust specific rules to turn them off (see ~~[.eslintrc.js](./.eslintrc.js)~~ [eslint.config.mjs](./eslint.config.mjs))
+   1. Prettier (optional) - this is automatically added if using Nest CLI
       1. Install Prettier vscode extension if not already
       1. In vscode user settings, set prettier to be the default formatter. This can be for all languages or language specific.
          ```json
@@ -56,6 +56,7 @@ Steps to start from scratch in an empty folder:
          }
          ```
       1. In vscode workspace setings for the project, set preferences as in [workspace-settings.json](./.vscode/settings.json)
+         1. NOTE these settings are duplicate of what's in user settings and therefore not required. However better to keep in workspace settings if sharing with other users. Default formatter = Prettier is not set in workspace settings as it will generate errors if user doesn't have Prettier plugin installed
       1. Edit .prettierrc to customize as needed. See [.prettierrc](./.prettierrc)
 1. Run ```npm run lint``` to verify everything is clean with strict settings. Adjust as needed
    1. Disable eslint @typescript-eslint/no-floating-promises file in [main.ts](./src/main.ts) to ignore missing await in top-level
