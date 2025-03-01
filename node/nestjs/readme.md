@@ -87,7 +87,9 @@ Steps to start from scratch in an empty folder:
    1. Create entity classes for business logic and storage layer
 1. Enable Swagger (https://docs.nestjs.com/openapi/introduction)
    <p>
-   Install @nestjs/swagger and enable swagger in [main.ts](./src/main.ts). Go to http://localhost:3000/api to view Swagger page. 
+
+   Install @nestjs/swagger and enable swagger in [main.ts](./src/main.ts). Go to http://localhost:3000/api to view Swagger page.
+
    <p>
    There are two ways to use Swagger:
 
@@ -112,7 +114,8 @@ https://docs.nestjs.com/
 
    * DTOs: 
       * Create a dto folder each controller, e.g. users/dto
-      * Create the requires request/response DTOs, named *.dto.ts 
+      * Create the required request/response DTOs, named *.dto.ts
+      * Should DTOs be interfaces or classes. Both will work but classes are recommended: https://docs.nestjs.com/controllers#request-payloads 
 
    * DI: Scopes: https://docs.nestjs.com/fundamentals/injection-scopes 
 
@@ -140,4 +143,20 @@ https://docs.nestjs.com/
 
    * Guard: similar but main responsibility is to allow or deny the request, e.g. authorization, RBAC etc. https://docs.nestjs.com/guards 
 
-   * Interceptor: similar to middleware but inspired from AOP to inject extra logic or transform result or extend basic function behavior 
+   * Interceptor: similar to middleware but inspired from AOP to inject extra logic or transform result or extend basic function behavior
+
+### Upgrade
+If a new version of Nest CLI is out, update global Nest CLI with npm.
+
+To update nest libraries in the project:
+   * pn outdated - to see what's outdated
+   * nest used to have a update CLI command but is not deprecated. Just use pn update or npm-check-updates (usual npm/pnpm update methods)
+
+### Other
+
+   * Global path prefix: to add a common prefix to all paths (e.g. /api), use global prefix: https://docs.nestjs.com/faq/global-prefix
+
+   * CORS: to enable CORS https://docs.nestjs.com/security/cors
+
+   * To return 404 in case of missing item for example, throw NotFoundException from @nestjs/common
+  
