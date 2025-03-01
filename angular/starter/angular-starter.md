@@ -113,5 +113,9 @@ References to start an Angular project.
    2. In CSS file, only full path works: /images/file.jpg. For example: ` background-image: url("/images/carousel2.jpg");`
       <br>
    Q: why this discrepancy?
+1. CORS: when calling server APIs, you may get CORS errors. Two ways to fix this:
+   1. Either use Angular proxy mechanism using proxy.conf.json file: https://v17.angular.io/guide/build#proxying-to-a-backend-server
+   1. Or setup server to handle CORS (e.g. https://docs.nestjs.com/security/cors)
+
 
    

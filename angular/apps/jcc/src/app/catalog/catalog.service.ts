@@ -14,7 +14,9 @@ export class CatalogService {
   private products: IProduct[] = [];
   private initialized: boolean = false;
   private loading: boolean = false;
-  private productUrl: string = 'api/catalog/catalog.json';
+  //TODO: create env settings to switch between local and server mode
+  // private productUrl: string = 'api/catalog/catalog.json';
+  private productUrl: string = 'http://localhost:3000/api/catalog';
 
   constructor(private http: HttpClient) {}
 
