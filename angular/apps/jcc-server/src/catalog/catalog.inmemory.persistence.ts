@@ -6,7 +6,7 @@ export class CatalogInmemoryPersistence {
   //TODO: this should be ProductEntity[]
   private products: ProductDto[] = [];
 
-  constructor() {
+  public constructor() {
     this.initProducts();
   }
 

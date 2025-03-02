@@ -4,7 +4,7 @@ import { ProductDto } from './dto/product.dto';
 
 @Controller('catalog')
 export class CatalogController {
-  constructor(private readonly catalogService: CatalogService) {}
+  public constructor(private readonly catalogService: CatalogService) {}
 
   // @Post()
   // create(@Body() createCatalogDto: CreateCatalogDto) {
@@ -15,12 +15,12 @@ export class CatalogController {
   //      and async methods all the way through to persistence
   // TODO: Get lint to flag these: access modifier, return type
   @Get()
-  findAll() {
+  public findAll(): ProductDto[] {
     return this.catalogService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  public findOne(@Param('id') id: string): ProductDto {
     const product: ProductDto | undefined = this.catalogService.findOne(id);
 
     if (!product) {

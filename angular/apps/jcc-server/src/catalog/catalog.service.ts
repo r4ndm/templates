@@ -4,17 +4,17 @@ import { ProductDto } from './dto/product.dto';
 
 @Injectable()
 export class CatalogService {
-  constructor(private readonly catalogPersistenceService: CatalogInmemoryPersistence) {}
+  public constructor(private readonly catalogPersistenceService: CatalogInmemoryPersistence) {}
 
   // create(createCatalogDto: CreateCatalogDto) {
   //   return 'This action adds a new catalog';
   // }
 
-  findAll(): ProductDto[] {
+  public findAll(): ProductDto[] {
     return this.catalogPersistenceService.getProducts();
   }
 
-  findOne(id: string) {
+  public findOne(id: string): ProductDto | undefined {
     return this.catalogPersistenceService.getProduct(id);
   }
 
