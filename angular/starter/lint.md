@@ -20,53 +20,51 @@ The following changes are made to the project:<br>
 
 
 ### Use
-Customize rules for appropriate level of checking.
-<br>
-**NOTE** the changes below are using the old .eslintrc.json file syntax. Equivalent [eslint.config.mjs](eslint.config.mjs) is the new flat file syntax. Replace the generated eslint.config.js with this eslint.config.mjs file. See Migration section below to see how to create this file.
+**NOTE 1** .eslintrc.json is the old file syntax. Generated eslint.config.js or [eslint.config.mjs](eslint.config.mjs) is the new flat file syntax. Use either the estlint.config.js or this [eslint.config.mjs](eslint.config.mjs). See Migration section below to see how to create this file from the old .eslintrc.json file.
 
-   1. Extend .eslintrc.json file for stricter type checking (https://typescript-eslint.io/docs/linting/configs/):
-      ```json
-      "extends": [
-        "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:@typescript-eslint/strict"
-      ]
-      ```
-      If using the last 2 rule sets, an additional parserOptions setting is needed in .eslintrc.json (see https://github.com/angular-eslint/angular-eslint/blob/main/docs/RULES_REQUIRING_TYPE_INFORMATION.md)
-      ```json
-      "parserOptions": {
-        "project": ["tsconfig.(app|spec).json"]
-      },
-      ```
-   1. To turn rules on or off or change the severity level, update .eslintrc.json file. 
-      1. Disable (remove or set error level to off) directive-selector and component-selector rules in .eslintrc.json unless all selectors have the same prefix
+**NOTE 2** If using eslint.config.mjs, you will need to install 2 more libraries:
+```pn install @eslint/js @eslint/eslintrc --save-dev```
+
+**NOTE 3** This [eslint.config.mjs](eslint.config.mjs) file was created by migrating the old .eslintrc.json. There may be a simpler .mjs file possible. TODO: Copy from nestjs created .mjs file?
+
+Customize rules for appropriate level of checking.
+
+   1. Extend eslint.config.mjs file for stricter type checking (https://typescript-eslint.io/docs/linting/configs/):
+      ```js
+      .extends(
+         'plugin:@angular-eslint/recommended',
+         'plugin:@angular-eslint/template/process-inline-templates',
+         'plugin:@typescript-eslint/recommended',
+         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+         'plugin:@typescript-eslint/strict',
+         'prettier'
+      )
+   1. To turn rules on or off or change the severity level, update rules section in eslint.config.mjs file. 
+      1. Disable (remove or set error level to off) directive-selector and component-selector rules unless all selectors have the same prefix
       1. To disable empty class rule: 
-         ```json
-         "@typescript-eslint/no-extraneous-class": [ "off" ]
+         ```js
+         '@typescript-eslint/no-extraneous-class': ['off'],
          ```
       1. Other rules that may help when getting started:
-         ```json
-         "@typescript-eslint/no-inferrable-types": [ "off" ],
-         "@typescript-eslint/explicit-function-return-type": [ "warn" ],
-         "@typescript-eslint/no-explicit-any": [ "off" ]
+         ```js
+         '@typescript-eslint/no-inferrable-types': ['off'],
+         '@typescript-eslint/explicit-function-return-type': ['warn'],
+         '@typescript-eslint/no-explicit-any': ['off']
          ```
-         Sample [.eslintrc.json](.eslintrc.json) file
+         Sample [eslint.config.mjs](eslint.config.mjs) file
       1. List of all Typescript ESLint rules: https://typescript-eslint.io/rules/
       <br>
          For example, to force functions to specify return types: https://typescript-eslint.io/rules/explicit-function-return-type
       
    1. Prettier/ESLint integration: for Prettier and ESLint to play nice together (https://typescript-eslint.io/docs/linting/configs/#prettier):
       1. Install eslint-config-prettier: `npm install eslint-config-prettier --save-dev` or `pnpm add eslint-config-prettier --save-dev|-D`
-      1. Add "prettier" to eslintrc.json "extends" array:
-         ```json
-         "extends": [
-           "plugin:@angular-eslint/recommended",
-           ...
-           "plugin:@typescript-eslint/strict"
-           "prettier"
-         ]
+      1. Add "prettier" to eslint.config.mjs "extends" section:
+         ```js
+         .extends(
+            'plugin:@angular-eslint/recommended',
+            ...
+            'prettier'
+         )
          ```
       1. Do you need eslint-plugin-prettier and prettier-eslint? Not really. See https://prettier.io/docs/en/integrating-with-linters.html#notes 
 

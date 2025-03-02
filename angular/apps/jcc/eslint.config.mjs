@@ -42,28 +42,16 @@ export default [
     },
 
     rules: {
-      '@angular-eslint/directive-selector': [
-        'off',
-        {
-          type: 'attribute',
-          prefix: 'at',
-          style: 'camelCase'
-        }
-      ],
-
-      '@angular-eslint/component-selector': [
-        'off',
-        {
-          type: 'element',
-          prefix: 'at',
-          style: 'kebab-case'
-        }
-      ],
-
-      '@typescript-eslint/no-extraneous-class': ['off'],
-      '@typescript-eslint/no-inferrable-types': ['off'],
-      '@typescript-eslint/explicit-function-return-type': ['warn'],
-      '@typescript-eslint/no-explicit-any': ['off']
+      '@angular-eslint/directive-selector': 'off',
+      '@angular-eslint/component-selector': 'off',
+      '@typescript-eslint/no-extraneous-class': 'off',
+      '@typescript-eslint/no-inferrable-types': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'warn',
+      '@typescript-eslint/explicit-member-accessibility': ['warn', { accessibility: 'explicit', overrides: { constructors: 'off' } }],
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-floating-promises': 'warn',
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      '@typescript-eslint/interface-name-prefix': 'off'
     }
   },
   ...compat.extends('plugin:@angular-eslint/template/recommended').map((config) => ({

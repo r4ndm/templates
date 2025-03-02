@@ -33,7 +33,8 @@ export default tseslint.config(
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
       '@typescript-eslint/interface-name-prefix': 'off',
-      // '@typescript-eslint/explicit-function-return-type': 'warn', // <-- we want this on but may need to disable if there are errors
+      '@typescript-eslint/explicit-function-return-type': 'warn',
+      "@typescript-eslint/explicit-member-accessibility": "warn",
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-extraneous-class': 'off',
       '@typescript-eslint/no-inferrable-types': 'off',

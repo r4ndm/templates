@@ -7,7 +7,7 @@ export class CartService {
 
   private cart: string[];
 
-  constructor() {
+  public constructor() {
     this.cart = [];
   }
 
