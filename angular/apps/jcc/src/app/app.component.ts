@@ -9,5 +9,5 @@ import { NavHeaderComponent } from "./nav-header/nav-header.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'jcc';
+  public title = 'jcc';
 }

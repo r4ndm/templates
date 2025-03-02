@@ -11,7 +11,7 @@ import { IProduct } from './product.interface';
 export class CatalogInmemoryService {
   private products: IProduct[] = [];
 
-  constructor() {
+  public constructor() {
     this.initProducts();
   }
 

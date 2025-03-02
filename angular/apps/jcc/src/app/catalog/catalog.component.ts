@@ -15,7 +15,7 @@ import { ProductSummaryCardComponent } from "../product-summary-card/product-sum
 export class CatalogComponent implements OnInit {
   protected currentFilter: string = 'All';
 
-  constructor(private catalogService: CatalogService, private router: Router, private route: ActivatedRoute) {}
+  public constructor(private catalogService: CatalogService, private router: Router, private route: ActivatedRoute) {}
 
   public ngOnInit(): void {
     // this.currentFilter = this.route.snapshot.params['filter'] ?? 'All';

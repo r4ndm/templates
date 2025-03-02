@@ -14,7 +14,7 @@ import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
-  constructor(private catalogService: CatalogService, private cartService: CartService) {}
+  public constructor(private catalogService: CatalogService, private cartService: CartService) {}
 
   public get cartCount(): number {
     return this.cartService.count;
