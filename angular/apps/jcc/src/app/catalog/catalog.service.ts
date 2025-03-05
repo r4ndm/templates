@@ -21,11 +21,11 @@ export class CatalogService {
   constructor(private http: HttpClient) {}
 
   public getProductIds(): string[] {
-    return this.getProducts().map((product) => product.id);
+    return this.getProducts().map(product => product.id);
   }
 
   public getProduct(id: string): IProduct | undefined {
-    return this.getProducts().find((product) => product.id === id);
+    return this.getProducts().find(product => product.id === id);
   }
 
   public getProductImageUrl(id: string): string {
@@ -44,12 +44,12 @@ export class CatalogService {
   }
 
   public getCategories(): string[] {
-    return [...new Set(this.getProducts().map((p) => p.category)), 'All'];
+    return [...new Set(this.getProducts().map(p => p.category)), 'All'];
   }
 
   public getProductsOfCategory(category: string): IProduct[] {
     const cat = category.toLowerCase();
-    return this.getProducts().filter((p) => cat === 'all' || p.category.toLowerCase() === cat);
+    return this.getProducts().filter(p => cat === 'all' || p.category.toLowerCase() === cat);
   }
 
   public getTotal(productIds: string[]): number {
@@ -70,7 +70,7 @@ export class CatalogService {
   }
 
   private initProducts(): void {
-    this.http.get<IProduct[]>(this.productUrl).subscribe((products) => {
+    this.http.get<IProduct[]>(this.productUrl).subscribe(products => {
       // simulate time taken to fetch data
       setTimeout(() => {
         this.products = products;

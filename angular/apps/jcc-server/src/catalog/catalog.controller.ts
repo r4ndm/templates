@@ -13,15 +13,14 @@ export class CatalogController {
 
   //TODO: change this to async: public async findAll(): Promise<ProductDto[]> ...
   //      and async methods all the way through to persistence
-  // TODO: Get lint to flag these: access modifier, return type
-  @Get()
-  public findAll(): ProductDto[] {
-    return this.catalogService.findAll();
+  @Get('/product')
+  public getProducts(): ProductDto[] {
+    return this.catalogService.getProducts();
   }
 
-  @Get(':id')
-  public findOne(@Param('id') id: string): ProductDto {
-    const product: ProductDto | undefined = this.catalogService.findOne(id);
+  @Get('/product/:id')
+  public getProduct(@Param('id') id: string): ProductDto {
+    const product: ProductDto | undefined = this.catalogService.getProduct(id);
 
     if (!product) {
       throw new NotFoundException('Invalid product');
@@ -29,6 +28,24 @@ export class CatalogController {
 
     return product;
   }
+
+  @Get('/ids')
+  public getProductIds(): string[] {
+    return this.catalogService.getProductIds();
+  }
+
+  @Get('/categories')
+  public getCategories(): string[] {
+    return this.catalogService.getCategories();
+  }
+
+  //TODO: replace with search query param
+  @Get('/find/:category')
+  public findProducts(@Param('category') category: string): ProductDto[] {
+    return this.catalogService.findProducts(category);
+  }
+
+  //TODO: gettotal will be a post with ProductListDto?
 
   // @Patch(':id')
   // update(@Param('id') id: string, @Body() updateCatalogDto: UpdateCatalogDto) {

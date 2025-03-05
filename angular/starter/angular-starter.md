@@ -61,7 +61,8 @@ References to start an Angular project.
      "tabWidth": 2,
      "singleQuote": true,
      "trailingComma" : "none",
-     "semi": true
+     "semi": true,
+     "arrowParens": "avoid"
    }
    ```
 
