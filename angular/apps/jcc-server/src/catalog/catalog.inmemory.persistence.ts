@@ -11,12 +11,28 @@ export class CatalogInmemoryPersistence {
   }
 
   public getProducts(): ProductDto[] {
-    // should read ProductEntity and convert to ProductDto
+    // TODO: should read ProductEntity and convert to ProductDto
     return this.products;
   }
 
   public getProduct(id: string): ProductDto | undefined {
-    return this.products.find((product) => product.id === id);
+    return this.getProducts().find(product => product.id === id);
+  }
+
+  public getProductIds(): string[] {
+    return this.getProducts().map(product => product.id);
+  }
+
+  //TODO: category should be stored separately, not inferred from products
+  //      and All should not be here
+  public getCategories(): string[] {
+    return [...new Set(this.getProducts().map(p => p.category)), 'All'];
+  }
+
+  //TODO: this should search based on search criteria, not just category
+  public findProducts(category: string): ProductDto[] {
+    const cat = category.toLowerCase();
+    return this.getProducts().filter(p => cat === 'all' || p.category.toLowerCase() === cat);
   }
 
   private initProducts(): void {
