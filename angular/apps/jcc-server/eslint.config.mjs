@@ -34,7 +34,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-argument': 'warn',
       '@typescript-eslint/interface-name-prefix': 'off',
       '@typescript-eslint/explicit-function-return-type': 'warn',
-      '@typescript-eslint/explicit-member-accessibility': 'warn',
+      '@typescript-eslint/explicit-member-accessibility': ['warn', { accessibility: 'explicit', overrides: { constructors: 'off' } }],
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-extraneous-class': 'off',
       '@typescript-eslint/no-inferrable-types': 'off'
