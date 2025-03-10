@@ -1,11 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { CatalogInmemoryPersistence } from './catalog.inmemory.persistence';
 import { ProductDto } from './dto/product.dto';
+import { CatalogPersistence } from './catalog.persistence';
+import { CatalogPersistenceFactory } from './catalog.persistence.factory';
 
 @Injectable()
 export class CatalogService {
+  private catalogPersistenceService: CatalogPersistence;
+
   //TODO: Inject appropriate catalog persistence service based on env
-  public constructor(private readonly catalogPersistenceService: CatalogInmemoryPersistence) {}
+  public constructor(private readonly catalogPersistenceFactory: CatalogPersistenceFactory) {
+    this.catalogPersistenceService = this.catalogPersistenceFactory.createCatalogPersistenceService();
+    console.log(`In CatalogService got persistence service type: ${this.catalogPersistenceService.constructor.name}`);
+  }
 
   // create(createCatalogDto: CreateCatalogDto) {
   //   return 'This action adds a new catalog';

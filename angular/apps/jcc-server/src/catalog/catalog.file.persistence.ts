@@ -3,7 +3,7 @@ import { ProductDto } from './dto/product.dto';
 import { CatalogPersistence } from './catalog.persistence';
 
 @Injectable()
-export class CatalogInmemoryPersistence extends CatalogPersistence {
+export class CatalogFilePersistence extends CatalogPersistence {
   //TODO: this should be ProductEntity[]
   private products: ProductDto[] = [];
   private categories: string[] = [];
