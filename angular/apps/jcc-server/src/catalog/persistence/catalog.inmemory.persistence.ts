@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { ProductDto } from './dto/product.dto';
+import { ProductDto } from '../dto/product.dto';
 import { CatalogPersistence } from './catalog.persistence';
 
 @Injectable()
-export class CatalogFilePersistence extends CatalogPersistence {
+export class CatalogInmemoryPersistence extends CatalogPersistence {
   //TODO: this should be ProductEntity[]
   private products: ProductDto[] = [];
   private categories: string[] = [];
