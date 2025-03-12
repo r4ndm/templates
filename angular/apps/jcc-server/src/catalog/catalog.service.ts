@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ProductDto } from './dto/product.dto';
-import { CatalogPersistence } from './catalog.persistence';
-import { CatalogPersistenceFactory } from './catalog.persistence.factory';
+import { CatalogPersistence } from './persistence/catalog.persistence';
+import { CatalogPersistenceFactory } from './persistence/catalog.persistence.factory';
 
 @Injectable()
 export class CatalogService {

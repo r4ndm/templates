@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { CatalogService } from './catalog.service';
 import { CatalogController } from './catalog.controller';
 import { ConfigModule } from '@nestjs/config';
-import { CatalogPersistenceFactory } from './catalog.persistence.factory';
+import { CatalogPersistenceFactory } from './persistence/catalog.persistence.factory';
 
 // Register persistence providers
 // This doesn't work when using CongirService to initialize from a file (OS env variables work as they are initialized)

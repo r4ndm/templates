@@ -1,4 +1,4 @@
-import { ProductDto } from './dto/product.dto';
+import { ProductDto } from '../dto/product.dto';
 
 export abstract class CatalogPersistence {
   public abstract getProducts(): ProductDto[];
