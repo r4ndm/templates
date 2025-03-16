@@ -45,7 +45,7 @@ export class CatalogFilePersistence extends CatalogPersistence {
     if (!this.initialized) {
       this.initialize();
     }
-    
+
     return this.categories;
   }
 
@@ -55,7 +55,7 @@ export class CatalogFilePersistence extends CatalogPersistence {
     return this.getProducts().filter(p => cat === 'all' || p.category.toLowerCase() === cat);
   }
 
-  private async initialize(): Promise<void> {
+  private initialize(): void {
     this.initCategories();
     this.initProducts();
     this.initialized = true;
@@ -70,7 +70,7 @@ export class CatalogFilePersistence extends CatalogPersistence {
       const productFilePath = path.join(process.cwd(), 'dist', 'assets', this.productsFile);
       console.log(`reading file ${productFilePath}`);
       const productsJson: string = fs.readFileSync(productFilePath, 'utf8');
-      this.products = JSON.parse(productsJson);
+      this.products = JSON.parse(productsJson) as ProductDto[];
     } catch (error: any) {
       console.error(`unable to read ${this.productsFile}. ${error}`);
     }
@@ -81,7 +81,7 @@ export class CatalogFilePersistence extends CatalogPersistence {
       const categoriesFilePath = path.join(process.cwd(), 'dist', 'assets', this.categoriesFile);
       console.log(`reading file ${categoriesFilePath}`);
       const categoriesJson: string = fs.readFileSync(categoriesFilePath, 'utf8');
-      this.categories = JSON.parse(categoriesJson);
+      this.categories = JSON.parse(categoriesJson) as string[];
     } catch (error: any) {
       console.error(`unable to read ${this.categoriesFile}. ${error}`);
     }
