@@ -9,7 +9,9 @@
   </div>
   <div class="price">
     <div [ngClass]="getDiscountClasses(product)">Wu{{ product.price | currency }}</div>
-    <div *ngIf="product?.discount !== 0" class="discount">Wu{{ product.price! * (1 - product.discount / 100) | currency }}</div>
+    @if (product.discount !== 0) {
+      <div class="discount">Wu{{ product.price! * (1 - product.discount / 100) | currency }}</div>
+    }
     <button class="btn" (click)="removeButtonClicked()">Remove</button>
   </div>
 </div>

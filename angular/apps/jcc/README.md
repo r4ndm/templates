@@ -7,3 +7,9 @@ Sample Angular application with bootstrap, nav-bar, flex layout (css flex only),
 <br>
 Build in Angular 19.
 
+
+## Steps
+   * pnpm install
+   * pmpn build | lint | test
+   * pnpm start
+

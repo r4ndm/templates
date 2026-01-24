@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { RecommendationService } from '../catalog/recommendation.service';
 import { IProduct } from '../catalog/product.interface';
@@ -8,12 +8,13 @@ import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterModule, BreadcrumbComponent],
+  imports: [RouterModule, BreadcrumbComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private catalogService: CatalogService, private recommendationService: RecommendationService) {}
+  private catalogService = inject(CatalogService);
+  private recommendationService = inject(RecommendationService);
   
   protected getBestDeals(): IProduct[] {
     return this.recommendationService.getBestDeals();

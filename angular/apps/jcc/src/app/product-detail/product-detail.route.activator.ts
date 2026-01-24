@@ -1,12 +1,13 @@
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
 import { CatalogService } from '../catalog/catalog.service';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductDetailRouteActivator implements CanActivate {
-  public constructor(private catalogService: CatalogService, private router: Router) {}
+  private catalogService = inject(CatalogService);
+  private router = inject(Router);
 
   public canActivate(route: ActivatedRouteSnapshot): boolean {
     const productId: string = route.params['id'] as string;

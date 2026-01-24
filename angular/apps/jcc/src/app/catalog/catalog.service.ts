@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IProduct } from './product.interface';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,14 +11,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CatalogService {
+  private http = inject(HttpClient);
+
   private products: IProduct[] = [];
   private initialized: boolean = false;
   private loading: boolean = false;
   //TODO: create env settings to switch between local and server mode
-  // private productUrl: string = 'api/catalog/catalog.json';
-  private productUrl: string = 'http://localhost:3000/api/catalog';
-
-  constructor(private http: HttpClient) {}
+  private productUrl: string = 'api/catalog/catalog.json';
 
   public getProductIds(): string[] {
     return this.getProducts().map(product => product.id);

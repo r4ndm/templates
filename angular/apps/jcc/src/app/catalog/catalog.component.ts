@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CatalogService } from './catalog.service';
 import { IProduct } from './product.interface';
@@ -8,14 +8,16 @@ import { ProductSummaryCardComponent } from "../product-summary-card/product-sum
 
 @Component({
   selector: 'app-catalog',
-  imports: [CommonModule, RouterModule, BreadcrumbComponent, ProductSummaryCardComponent],
+  imports: [RouterModule, BreadcrumbComponent, ProductSummaryCardComponent],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css'
 })
 export class CatalogComponent implements OnInit {
-  protected currentFilter: string = 'All';
+  private catalogService = inject(CatalogService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
-  public constructor(private catalogService: CatalogService, private router: Router, private route: ActivatedRoute) {}
+  protected currentFilter: string = 'All';
 
   public ngOnInit(): void {
     // this.currentFilter = this.route.snapshot.params['filter'] ?? 'All';

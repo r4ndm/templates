@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { IProduct } from '../catalog/product.interface';
 import { CartService } from '../cart/cart.service';
 
@@ -9,10 +9,10 @@ import { CartService } from '../cart/cart.service';
   styleUrl: './product-summary-card.component.css'
 })
 export class ProductSummaryCardComponent {
+  private cartService = inject(CartService);
+
   @Input() public product!: IProduct;
   @Output() public detailButtonPressed = new EventEmitter<IProduct>();
-
-  constructor(private cartService: CartService) {}
   
   public getImageUrl(): string {
     return `/images/products/${this.product.image}`;

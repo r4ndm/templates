@@ -9,14 +9,20 @@
 
   <h1 class="header mt-5">Your Cart</h1>
 
-  <div class="empty-cart" *ngIf="cartCount === 0">You have no items in your cart</div>
-  <div class="container" *ngIf="cartCount > 0">
-    <ul class="cart">
-      <li class="cart-item" *ngFor="let product of getCartProducts()">
-        <app-cart-detail [product]="product" (buttonPressed)="removeFromCart($event)"></app-cart-detail>
-      </li>
-    </ul>
-    <div class="total">Total: Wu{{ cartTotal | currency }}</div>
-    <button class="btn btn-success order-btn" routerLink="/order">Order</button>
-  </div>
+  @if (cartCount === 0) {
+    <div class="empty-cart">You have no items in your cart</div>
+  }
+  @if (cartCount > 0) {
+    <div class="container">
+      <ul class="cart">
+        @for (product of getCartProducts(); track product) {
+          <li class="cart-item">
+            <app-cart-detail [product]="product" (buttonPressed)="removeFromCart($event)"></app-cart-detail>
+          </li>
+        }
+      </ul>
+      <div class="total">Total: Wu{{ cartTotal | currency }}</div>
+      <button class="btn btn-success order-btn" routerLink="/order">Order</button>
+    </div>
+  }
 </div>
