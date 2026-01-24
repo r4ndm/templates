@@ -13,6 +13,10 @@ $ pnpm install
 ## Compile and run the project
 
 ```bash
+
+# lint
+$ pnpm run lint
+
 # development
 $ pnpm run start
 
