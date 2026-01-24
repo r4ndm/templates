@@ -4,6 +4,14 @@ Server for JCC application with catalog and shopping cart backend services.
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Summary
+```bash
+$ pnpm install
+$ pnpm start
+```
+navigate to http://localhost:3000/doc
+
+
 ## Project setup
 
 ```bash
