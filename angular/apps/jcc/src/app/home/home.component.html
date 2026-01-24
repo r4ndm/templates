@@ -81,18 +81,20 @@
   <div class="container history">
     <h2 class="pb-4 mb-2 mt-5">Best deals</h2>
     <div class="row row-cols-1 row-cols-lg-3 row-cols-xxl-4 g-4">
-      <div class="col" *ngFor="let product of getBestDeals()">
-        <div class="card rounded mb-4 shadow-sm">
-          <img class="card-img-top mx-auto mt-2" [src]="getProductImageUrl(product.id)" />
-          <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.description }}</p>
-          </div>
-          <div class="card-footer mx-auto">
-            <a [routerLink]="['/detail', product?.id]" class="btn btn-primary">View details</a>
+      @for (product of getBestDeals(); track product) {
+        <div class="col">
+          <div class="card rounded mb-4 shadow-sm">
+            <img class="card-img-top mx-auto mt-2" [src]="getProductImageUrl(product.id)" />
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.description }}</p>
+            </div>
+            <div class="card-footer mx-auto">
+              <a [routerLink]="['/detail', product?.id]" class="btn btn-primary">View details</a>
+            </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 </main>

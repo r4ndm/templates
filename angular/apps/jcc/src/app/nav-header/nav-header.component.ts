@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CatalogService } from '../catalog/catalog.service';
-import { CommonModule } from '@angular/common';
+
 import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-nav-header',
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './nav-header.component.html',
   styleUrl: './nav-header.component.css'
 })

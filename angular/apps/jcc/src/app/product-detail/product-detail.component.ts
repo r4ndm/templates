@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CatalogService } from '../catalog/catalog.service';
 import { IProduct } from '../catalog/product.interface';
-import { CommonModule } from '@angular/common';
+
 import { RecommendationService } from '../catalog/recommendation.service';
 import { CartService } from '../cart/cart.service';
 import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, RouterModule, BreadcrumbComponent],
+  imports: [RouterModule, BreadcrumbComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })

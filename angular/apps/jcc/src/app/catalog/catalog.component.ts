@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CatalogService } from './catalog.service';
 import { IProduct } from './product.interface';
@@ -8,7 +8,7 @@ import { ProductSummaryCardComponent } from "../product-summary-card/product-sum
 
 @Component({
   selector: 'app-catalog',
-  imports: [CommonModule, RouterModule, BreadcrumbComponent, ProductSummaryCardComponent],
+  imports: [RouterModule, BreadcrumbComponent, ProductSummaryCardComponent],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css'
 })
