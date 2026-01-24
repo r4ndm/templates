@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IProduct } from './product.interface';
 import { CatalogService } from './catalog.service';
 
@@ -6,7 +6,7 @@ import { CatalogService } from './catalog.service';
   providedIn: 'root'
 })
 export class RecommendationService {
-  constructor(private catalogService: CatalogService) {}
+  private catalogService = inject(CatalogService);
 
   public isBestSeller(id: string): boolean {
     return id === '1001' || id === '1005';

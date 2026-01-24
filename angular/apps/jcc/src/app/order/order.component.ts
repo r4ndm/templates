@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,9 @@ import { CatalogService } from '../catalog/catalog.service';
   styleUrl: './order.component.css'
 })
 export class OrderComponent {
-  constructor(private router: Router, private cartService: CartService, private catalogService: CatalogService) {}
+  private router = inject(Router);
+  private cartService = inject(CartService);
+  private catalogService = inject(CatalogService);
 
   protected get cartTotal(): number {
     return this.catalogService.getTotal(this.cartService.getCart());

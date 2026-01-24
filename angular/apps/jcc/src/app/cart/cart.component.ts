@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IProduct } from '../catalog/product.interface';
 import { CartService } from './cart.service';
 import { CatalogService } from '../catalog/catalog.service';
@@ -14,7 +14,8 @@ import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
-  public constructor(private catalogService: CatalogService, private cartService: CartService) {}
+  private catalogService = inject(CatalogService);
+  private cartService = inject(CartService);
 
   public get cartCount(): number {
     return this.cartService.count;
