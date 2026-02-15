@@ -18,7 +18,7 @@ export class CatalogService {
   private loading: boolean = false;
   //TODO: create env settings to switch between local and server mode
   private productUrl: string = 'api/catalog/catalog.json';
-  // private productUrl: string = 'http://localhost:3000/api/catalog';
+  //private productUrl: string = 'http://localhost:3000/api/catalog/product';
 
   public getProductIds(): string[] {
     return this.getProducts().map(product => product.id);

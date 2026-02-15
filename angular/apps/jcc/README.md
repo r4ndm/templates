@@ -12,4 +12,5 @@ Build in Angular 19.
    * pnpm install
    * pmpn build | lint | test
    * pnpm start
+   * browse to app at http://localhost:4200
 
