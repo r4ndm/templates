@@ -51,7 +51,7 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
-      '@typescript-eslint/interface-name-prefix': 'off'
+      '@typescript-eslint/interface-name-prefix': 'off' -- this is now obsolete
     }
   },
   ...compat.extends('plugin:@angular-eslint/template/recommended').map((config) => ({
